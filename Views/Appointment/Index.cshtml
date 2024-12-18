@@ -1,0 +1,43 @@
+﻿@model List<Appointment>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="card-title">Randevular</h3>
+        <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Randevu</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Müşteri</th>
+                    <th>Hizmet</th>
+                    <th>Durum</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                        <td>@appointment.AppointmentTime.ToString(@"hh\:mm")</td>
+                        <td>@appointment.Customer.Name @appointment.Customer.Surname</td>
+                        <td>@appointment.Service.Name</td>
+                        <td>
+                            <span class="badge badge-@(appointment.Status == "Onaylandı" ? "success" :
+                                                    appointment.Status == "İptal edildi" ? "danger" : "warning")">
+                                @appointment.Status
+                            </span>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", new { id = appointment.Id })" class="btn btn-sm btn-info">Düzenle</a>
+                            <a href="@Url.Action("Delete", new { id = appointment.Id })" class="btn btn-sm btn-danger">İptal</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

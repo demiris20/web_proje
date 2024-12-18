@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Section -->
+<div class="position-relative bg-dark text-white py-5 mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">Profesyonel Erkek Kuaförü</h1>
+                <p class="lead">Uzman kadromuz ile sizlere en iyi hizmeti sunuyoruz. Hemen randevunuzu alın!</p>
+                <a href="@Url.Action("Create", "Appointment")" class="btn btn-primary btn-lg">Randevu Al</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="/api/placeholder/600/400" alt="Kuaför" class="img-fluid rounded shadow" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hizmetler Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Hizmetlerimiz</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="/api/placeholder/400/300" class="card-img-top" alt="Saç Kesimi">
+                    <div class="card-body">
+                        <h5 class="card-title">Saç Kesimi</h5>
+                        <p class="card-text">Profesyonel saç kesimi hizmetimiz ile tarzınızı yansıtın.</p>
+                        <p class="card-text"><strong>Süre:</strong> 30 dk</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 100 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="/api/placeholder/400/300" class="card-img-top" alt="Sakal Tıraşı">
+                    <div class="card-body">
+                        <h5 class="card-title">Sakal Tıraşı</h5>
+                        <p class="card-text">Uzman sakal tıraşı ve şekillendirme hizmeti.</p>
+                        <p class="card-text"><strong>Süre:</strong> 20 dk</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 50 TL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="/api/placeholder/400/300" class="card-img-top" alt="Saç & Sakal">
+                    <div class="card-body">
+                        <h5 class="card-title">Saç & Sakal Kombo</h5>
+                        <p class="card-text">Komple bakım paketi ile tam bir değişim yaşayın.</p>
+                        <p class="card-text"><strong>Süre:</strong> 45 dk</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 140 TL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Çalışma Saatleri -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Çalışma Saatleri</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Pazartesi</td>
+                                <td>09:00 - 19:00</td>
+                            </tr>
+                            <tr>
+                                <td>Salı</td>
+                                <td>09:00 - 19:00</td>
+                            </tr>
+                            <tr>
+                                <td>Çarşamba</td>
+                                <td>09:00 - 19:00</td>
+                            </tr>
+                            <tr>
+                                <td>Perşembe</td>
+                                <td>09:00 - 19:00</td>
+                            </tr>
+                            <tr>
+                                <td>Cuma</td>
+                                <td>09:00 - 19:00</td>
+                            </tr>
+                            <tr>
+                                <td>Cumartesi</td>
+                                <td>09:00 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>Pazar</td>
+                                <td class="text-danger">Kapalı</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- İletişim Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">İletişim</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <i class="bi bi-geo-alt fs-1 text-primary mb-3"></i>
+                <h5>Adres</h5>
+                <p>Örnek Mahallesi, Örnek Sokak No:123<br>Merkez/Şehir</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="bi bi-telephone fs-1 text-primary mb-3"></i>
+                <h5>Telefon</h5>
+                <p>+90 555 123 45 67</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="bi bi-envelope fs-1 text-primary mb-3"></i>
+                <h5>E-posta</h5>
+                <p>info@kuafor.com</p>
+            </div>
+        </div>
+    </div>
+</section>
