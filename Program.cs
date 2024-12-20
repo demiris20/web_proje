@@ -1,30 +1,51 @@
-using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+    using web_proje.Models;
 
+    namespace web_proje
+    {
+        public class Program
+        {
+            public static void Main(string[] args)
+            {
+                var builder = WebApplication.CreateBuilder(args);
 
-var builder = WebApplication.CreateBuilder(args);
+                // Add services to the container.
+                builder.Services.AddControllersWithViews();
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+                // Add DbContext and configure the database connection
+                builder.Services.AddDbContext<BarberDBContext>(options =>
+                    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-var app = builder.Build();
+                // Add session
+                builder.Services.AddSession(options =>
+                {
+                    options.IdleTimeout = TimeSpan.FromMinutes(30);
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.IsEssential = true;
+                });
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
+                var app = builder.Build();
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+                // Configure the HTTP request pipeline.
+                if (!app.Environment.IsDevelopment())
+                {
+                    app.UseExceptionHandler("/Home/Error");
+                    app.UseHsts();
+                }
 
-app.UseRouting();
+                app.UseHttpsRedirection();
+                app.UseStaticFiles();
 
-app.UseAuthorization();
+                app.UseRouting();
+                app.UseSession(); // Session middleware
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+                app.UseAuthorization();
 
-app.Run();
+                app.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Admin}/{action=Login}/{id?}");
 
+                app.Run();
+            }
+        }
+    }
