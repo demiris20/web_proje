@@ -13,6 +13,7 @@ namespace web_proje.Models
         [Required(ErrorMessage = "Randevu saati zorunludur.")]
         public TimeSpan AppointmentTime { get; set; }
 
+
         public int CustomerId { get; set; }
         public required Customer Customer { get; set; }
 

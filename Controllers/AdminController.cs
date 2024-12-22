@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using web_proje.Models;
+using web_proje.Data; // Bu satırı ekleyin
+using Microsoft.AspNetCore.Http;
 
 namespace web_proje.Controllers
 {
@@ -8,7 +10,7 @@ namespace web_proje.Controllers
     {
         private readonly BarberDBContext _context;
 
-        // Inject DbContext through constructor
+        // DbContext'i constructor üzerinden enjekte et
         public AdminController(BarberDBContext context)
         {
             _context = context;
@@ -39,10 +41,10 @@ namespace web_proje.Controllers
         [HttpGet]
         public IActionResult Dashboard()
         {
-            // Fetch personnel from database
+            // Veritabanından personel bilgilerini çek
             var viewModel = new AdminDashboardViewModel
             {
-                Personnel = _context.Personnel.ToList()
+                Personnel = new List<Personnel>(_context.Personnel)
             };
 
             return View(viewModel);
