@@ -12,8 +12,8 @@ using web_proje.Data;
 namespace web_proje.Migrations
 {
     [DbContext(typeof(BarberDBContext))]
-    [Migration("20241221190144_UpdateServicePriceColumn")]
-    partial class UpdateServicePriceColumn
+    [Migration("20241223160409_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,7 +110,7 @@ namespace web_proje.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("web_proje.Models.Personnel", b =>

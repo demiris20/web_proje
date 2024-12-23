@@ -107,7 +107,7 @@ namespace web_proje.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("web_proje.Models.Personnel", b =>
