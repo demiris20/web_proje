@@ -2,6 +2,8 @@
 using web_proje.Models;
 
 namespace web_proje.Data
+
+    //adfsghjtkyıoyrhte
 {
     public class BarberDBContext(DbContextOptions<BarberDBContext> options) : DbContext(options)
     {
