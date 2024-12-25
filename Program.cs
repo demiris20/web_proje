@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using web_proje.Data;
-
+//dsfgdhfjghj
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+
+
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
